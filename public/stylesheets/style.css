@@ -1,8 +1,71 @@
+html, * {
+  font-family: 'Mulish', sans-serif;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: auto;
 }
 
 a {
-  color: #00B7FF;
+  color: white;
+}
+
+a:hover {
+  color: rgb(180, 220, 255);
+}
+
+nav {
+ background-color: #79A9D1;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
+ align-items: center;
+ height: 70px;
+}
+
+nav > a {
+  font-size: 15px;
+  margin: 15px;
+}
+
+nav > a:last-child {
+  margin-left: auto;
+}
+
+.login {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+#title {
+  text-align: center;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background-color: #7D8CA3;
+  color: white;
+}
+
+footer > a {
+  display: flex;
+  font-size: 15px;
+  margin-left: 25px;
+  flex-direction: column;
+}
+
+footer > h3 {
+  font-size: 20px;
+  margin: 25px;
+  margin-bottom: 5px;
 }
