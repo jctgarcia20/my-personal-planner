@@ -3,13 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
+var methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
-// configure passport
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
@@ -30,13 +29,14 @@ app.use(methodOverride('_method'));
 
 // Session middleware
 app.use(session({
-  secret: process.env.SECRET,
+  secret: process.env.GOOGLE_SECRET,
   resave: false,
   saveUninitialized: true
 }));
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 // Make user available within every EJS template
 app.use(function(req, res, next) {

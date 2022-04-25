@@ -6,6 +6,6 @@ module.exports = {
 
 function index(req, res) {
   Trip.find({}, function(err, trips) {
-    res.render('trips/index', { title: 'All Trips', trips });
+    res.render('trips', { title: 'All Trips', trips });
   });
 }
