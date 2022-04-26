@@ -45,7 +45,24 @@ nav > a:last-child {
 }
 
 #container {
+  margin-top: 1rem;
   position: relative;
+}
+
+#container > button {
+  position: absolute;
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(41, 73, 206);
+  color: white;
+  border-radius: 5px;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  min-height: 3rem;
+  -webkit-tap-highlight-color: transparent;
+  text-shadow: none;
 }
 
 #title {
@@ -70,14 +87,44 @@ nav > a:last-child {
 }
 
 #cover {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
   background-size: cover;
   background-position: center;
-  max-width: 100%;
   height: auto;
+  border-radius: 8px;
+}
+
+h2 {
+  margin-left: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+
+#models {
+  display: flex;
+  justify-content: center;
+}
+
+.column, figcaption {
+  /* display: flex; */
+  /* justify-content: center; */
+  max-width: 95%;
+  height: auto;
+  border-radius: 5px;
+  margin: .5rem;
+}
+
+figcaption {
+  margin-top: -.5rem;
 }
 
 footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
   height: 150px;
