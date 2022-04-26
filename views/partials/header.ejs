@@ -13,6 +13,8 @@
 <body>
   <nav>
     <a href="/">HOME</a>
+    <a href="">EXPLORE</a>
+    <a href="">MY TRIPS</a>
     <% if (user) { %>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
@@ -20,4 +22,8 @@
     <% } %>
   </nav>
   <main>
-    <h1 id="title"><%= title %></h1>
+    <div id="container">
+      <img id="cover" src="https://i.imgur.com/o04tCfR.jpg" alt="White Sandy Beach">
+      <div id="title"><%= title %></div>
+      <p id="slogan">Save money. Live better.</p>
+    </div>
