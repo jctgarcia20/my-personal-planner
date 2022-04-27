@@ -3,9 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 var session = require('express-session');
 var passport = require('passport');
-var methodOverride = require('method-override');
 
 require('dotenv').config();
 require('./config/database');
@@ -13,6 +13,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var tripsRouter = require('./routes/trips');
+var destinationsRouter = require('./routes/destinations');
 
 var app = express();
 
@@ -29,7 +30,7 @@ app.use(methodOverride('_method'));
 
 // Session middleware
 app.use(session({
-  secret: process.env.GOOGLE_SECRET,
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));

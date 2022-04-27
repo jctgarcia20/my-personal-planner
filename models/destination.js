@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const destSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
   location: {
     type: String,
     required: true
@@ -15,7 +19,7 @@ const destSchema = new Schema({
     required: true
   },
   phoneNum: {
-    type: Number,
+    type: String,
     required: true
   },
   openingHrs: {

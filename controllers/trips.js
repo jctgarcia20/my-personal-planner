@@ -2,11 +2,27 @@ const Trip = require('../models/trip');
 const Dest = require('../models/destination');
 
 module.exports = {
+  index,
+  show,
   create,
   new: newTrip,
   addToTrip,
   delete: deleteTrip
 };
+
+function index(req, res) {
+  Trip.find({}, function(err, trips) {
+    res.render('trips/index', { title: 'My Trips', trips });
+  });
+}
+
+function show(req, res) {
+  // Trip.findById(req.params.id)
+  //   .populate()
+  //   .exec(function(err, trip) {
+
+  //   });
+}
 
 function create(req, res) {
   Trip.findById(req.params.id, function(err, movie) {
@@ -21,8 +37,7 @@ function create(req, res) {
 }
 
 function newTrip(req, res) {
-  const trip = req.params.id;
-  res.render('itineraries/new', { title: 'Create New Trip', trip });
+  res.render('trips/new', { title: 'Create New Trip' });
 }
 
 function addToTrip(req, res) {

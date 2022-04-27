@@ -14,12 +14,12 @@
   <title><%= title %></title>
 </head>
 <body>
-  <input id="autocomplete" type="text">
   <nav>
     <h1>JGTravels</h1>
     <a href="/">HOME</a>
     <a href="">EXPLORE</a>
     <a href="">MY TRIPS</a>
+    <a href="/trips/new">PLAN YOUR TRIP NOW</a>
     <% if (user) { %>
       <a href="/logout">LOG OUT</a>
     <% } else { %>
@@ -27,37 +27,4 @@
     <% } %>
   </nav>
   <main>
-    <div id="container">
-      <video autoplay loop muted poster="https://i.imgur.com/o04tCfR.jpg">
-        <source src="https://i.imgur.com/XI9jRw1.mp4" type="video/mp4">
-      </video>
-      <!-- <img id="cover" src="https://i.imgur.com/o04tCfR.jpg" alt="White Sandy Beach"> -->
-      <div id="title"><%= title %></div>
-      <p id="slogan">Save money. Live better.</p>
-      <button>PLAN YOUR TRIP NOW</button>
-    </div>
-    <h2>Your next destination awaits</h2>
-    <div id="models">
-      <figure>
-        <img class="column" src="https://i.imgur.com/7U3eNYB.jpg" alt="camels">
-        <figcaption>Morocco</figcaption>
-      </figure>
-      <figure>
-        <img class="column" src="https://i.imgur.com/VRquuTn.jpg" alt="hot air balloons">
-        <figcaption>New Mexico</figcaption>
-      </figure>
-      <figure>
-        <img class="column" src="https://i.imgur.com/W8ZDiz0.jpg" alt="parents and baby">
-        <figcaption>Belize</figcaption>
-      </figure>
-    </div>
-    <div id="models2">
-      <figure>
-        <img class="column2" src="https://i.imgur.com/ULFJk0j.jpg" alt="santorini">
-        <figcaption>Greece</figcaption>
-      </figure>
-      <figure>
-        <img class="column2" src="https://i.imgur.com/nwD7We8.jpg" alt="market">
-        <figcaption>Thailand</figcaption>
-      </figure>
-    </div>
+    

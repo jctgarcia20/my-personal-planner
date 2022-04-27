@@ -5,7 +5,7 @@ module.exports = {
 };
 
 function index(req, res) {
-  Trip.find({}, function(err, trips) {
-    res.render('trips', { title: 'JGTravels', trips });
+  Trip.find({}, function(err, index) {
+    res.render('index', { title: 'JGTravels', index });
   });
 }
