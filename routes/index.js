@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 const passport = require('passport');
 
+const key = process.env.GOOGLE_API_KEY;
+
 router.get('/', function(req, res, next) {
   res.redirect('/trips');
 });

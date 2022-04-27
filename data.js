@@ -1,0 +1,11 @@
+exports.trips = [
+  {
+
+  }
+];
+
+exports.destinations = [
+  {
+    
+  }
+];

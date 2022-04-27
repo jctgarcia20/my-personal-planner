@@ -3,20 +3,31 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const tripSchema = new Schema({
-  // _id: ,
-  // userFavoriting: ,
+  title: {
+    type: String,
+    required: true
+  },
   location: {
     type: String
   },
+  stops: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
   budget:  {
     type: Number
   },
   expenses: {
     type: Number
   },
-  Public: {
+  public: {
     type: Boolean,
     default: false
+  },
+  date: {
+    type: String
+  },
+  user: {
+    type: Schema.Types.ObjectId, 
+    ref: 'User', 
+    required: true
   },
 }, {
   timestamps: true
