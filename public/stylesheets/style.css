@@ -24,9 +24,15 @@ nav {
  height: 70px;
 }
 
-nav > a {
+nav > a, h1 {
   font-size: 15px;
   margin: 15px;
+}
+
+nav > h1 {
+  font-size: 35px;
+  font-family: 'Cormorant Garamond', serif;
+  color: white;
 }
 
 nav > a:last-child {
@@ -54,15 +60,18 @@ nav > a:last-child {
   top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(41, 73, 206);
+  /* background-color: rgb(41, 73, 206); */
+  background-color: transparent;
+  border-color: white;
   color: white;
-  border-radius: 5px;
   padding: 0.25rem 1rem;
   font-size: 1rem;
+  font-weight: bold;
   line-height: 1.25rem;
   min-height: 3rem;
   -webkit-tap-highlight-color: transparent;
   text-shadow: none;
+  font-family: 'Cormorant Garamond', serif;
 }
 
 #title {
@@ -70,7 +79,7 @@ nav > a:last-child {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  font-size: 80px;
   color: white;
   font-weight: bold;
   font-family: 'Cormorant Garamond', serif;
@@ -86,15 +95,14 @@ nav > a:last-child {
   font-weight: bold;
 }
 
-#cover {
+video {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 95%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   height: auto;
-  border-radius: 8px;
 }
 
 h2 {
@@ -105,15 +113,13 @@ h2 {
   font-size: 1.7rem;
 }
 
-#models {
+#models, #models2 {
   display: flex;
   justify-content: center;
 }
 
 .column, figcaption {
-  /* display: flex; */
-  /* justify-content: center; */
-  max-width: 95%;
+  max-width: 100%;
   height: auto;
   border-radius: 5px;
   margin: .5rem;
@@ -121,6 +127,14 @@ h2 {
 
 figcaption {
   margin-top: -.5rem;
+}
+
+.column2 {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin: .5rem;
+  margin-right: 1rem;
 }
 
 footer {
@@ -143,4 +157,5 @@ footer > h3 {
   font-size: 20px;
   margin: 25px;
   margin-bottom: 5px;
+  margin-top: 100px;
 }
