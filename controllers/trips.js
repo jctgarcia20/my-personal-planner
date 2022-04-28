@@ -1,13 +1,14 @@
 const Trip = require('../models/trip');
-const Dest = require('../models/destination');
+const Destination = require('../models/destination');
 
 module.exports = {
   index,
   show,
   create,
   new: newTrip,
-  addToTrip,
-  delete: deleteTrip
+  delete: deleteTrip,
+  edit: editTrip,
+  update
 };
 
 function index(req, res) {
@@ -17,28 +18,21 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  Trip.findById(req.params.id)
-    .populate('stops')
-    .exec(function(err, trip) {
-      Destination.find(
-        {_id: {$nin: trip.cast}},
-        function(err, destinations) {
-          console.log(destinations);
-          res.render('trip/show', { title: 'Trip Details', trip, destinations });
-        }
-      );
+  Trip.findById(req.params.id,
+    // .populate('stops')
+    function(err, trip) {
+          res.render('trips/show', { title: 'Trip Details', trip, destinations });
     });
 }
 
 function create(req, res) {
-  Trip.findById(req.params.id, function(err, movie) {
-    req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar =  req.user.avatar;
-    dest.trip.push(req.body);
-    dest.save(function (err) {
-      res.redirect(`/destinations/${req.params.id}`);
-    });
+  const trip = new Trip(req.body);
+  // Assign the logged in user's id
+  trip.user = req.user._id;
+  trip.save(function(err) {
+    if (err) return res.render('trips/new');
+    // Probably want to go to newly added book's show view
+    res.redirect(`/trips`);
   });
 }
 
@@ -46,21 +40,35 @@ function newTrip(req, res) {
   res.render('trips/new', { title: 'Create New Trip' });
 }
 
-function addToTrip(req, res) {
-  Trip.findById(req.params.id, function(err, movie) {
-    trip.stops.push(req.body.performerId);
-    trip.save(function(err) {
-      res.redirect(`/trips/${trip._id}`);
-    });
+function deleteTrip(req, res) {
+  console.log('hello');
+  Trip.findOneAndDelete(
+    // Ensue that the book was created by the logged in user
+    {_id: req.params.id, user: req.user._id}, function(err) {
+      // Deleted book, so must redirect to index
+      res.redirect('/trips');
+    }
+  );
+}
+
+function editTrip(req, res) {
+  console.log('string')
+  Trip.findById(req.params.id, function(err, trip) {
+    res.render('trips/edit', {title:'Update Trip', trip});
   });
 }
 
-function deleteTrip(req, res) {
-  Dest.findOne({'trip._id': req.params.id, 'trip.user': req.user._id}).then(function(dest) {
-    if (!dest) return res.redirect('/trips/dest._id/new');
-    dest.trip.remove(req.params.id);
-    dest.save().then(function() {
-      res.redirect(`/destinations/${req.params.id}`);
-    });
-  });
+function update(req, res) {
+  Trip.findOneAndUpdate(
+    {_id: req.params.id, user: req.user._id},
+    // update object with updated properties
+    req.body,
+    // options object with new: true to make sure updated doc is returned
+    {new: true},
+    function(err, trip) {
+      console.log(err);
+      if (err || !trip) return res.redirect('/trips');
+      res.redirect(`/trips/${trip._id}`);
+    }
+  );
 }

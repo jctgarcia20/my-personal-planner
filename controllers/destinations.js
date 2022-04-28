@@ -1,33 +1,26 @@
-const Dest = require('../models/destination');
+const Trip = require('../models/trip');
 
 module.exports = {
-  index,
-  show,
   create,
   new: newDest
 };
 
-function index(req, res) {
-  Dest.find({}, function(err, dest) {
-    res.render('destinations/index', { title: 'All Destinations', dest });
-  });
-}
-
-function show(req, res) {
-  Dest.findById(req.params.id, function (err, dest) {
-    res.render('destinations/show', { title: '', dest });
-  });
-}
-
 function create(req, res) {
-  let dest = new Dest(req.body);
-  dest.save(function(err) {
-    if (err) return res.redirect('/destinations/new');
-    console.log(dest);
-    res.redirect(`/destinations/${dest._id}`);
+  Trip.findById(req.params.id, function(err, trip) {
+    // Update req.body to contain user info
+    req.body.user = req.user._id;
+    // Add the comment
+    console.log(req.body);
+    console.log('trip', trip);
+    trip.stops.push(req.body);
+    trip.save(function(err) {
+      res.redirect(`/trips/${trip._id}`);
+    });
   });
 }
 
 function newDest(req, res) {
-  res.render('destinations/new', { title: 'Add New Destination' });
+  Trip.findById(req.params.id, function(err, trip) {
+    res.render('destinations/new', { title: 'Add New Destination', trip });
+  });
 }

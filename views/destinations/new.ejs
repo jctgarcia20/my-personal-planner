@@ -2,7 +2,7 @@
 
 <h1>Create New Destination</h1>
 
-<form action="/destinations" method="POST">
+<form action="/trips/<%= trip._id %>/destinations" method="POST">
   <label>Photos:</label>
     <input type="text" name="imgUrl">
   <label>Name:</label>
@@ -14,7 +14,9 @@
   <label>Phone Number:</label>
     <input type="number" name="phoneNum">
   <label>Website:</label>
-    <input type="number" name="website">
+    <input type="text" name="website">
+  <label>Budget:</label>
+    <input type="number" name="budget">
   <label>Expenses:</label>
     <input type="number" name="expenses">
   <input type="submit" value="Add Destination">

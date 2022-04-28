@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 const destCtrl = require('../controllers/destinations');
 
-router.get('/', destCtrl.index);
-router.get('/new', destCtrl.new);
-router.post('/', destCtrl.create);
-router.get('/:id', destCtrl.show);
+router.get('/trips/:id/destinations/new', destCtrl.new);
+router.post('/trips/:id/destinations', destCtrl.create);
 
 module.exports = router;

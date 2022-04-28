@@ -12,8 +12,12 @@ router.get('/new', tripsCtrl.new);
 // GET /trips/:id (show functionality)
 router.get('/:id', tripsCtrl.show);
 // POST /trips (create functionality)
-router.post('/trips', isLoggedIn, tripsCtrl.create);
+router.post('/', isLoggedIn, tripsCtrl.create);
 // DELETE /trips (delete functionality)
-router.delete('/:id', tripsCtrl.delete);
+router.delete('/:id', isLoggedIn, tripsCtrl.delete);
+
+router.get('/:id/edit', isLoggedIn, tripsCtrl.edit);
+
+router.put('/:id', isLoggedIn, tripsCtrl.update);
 
 module.exports = router;

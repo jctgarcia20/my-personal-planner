@@ -1,5 +1,13 @@
 <%- include('../partials/header') %>
 
+<a href="/trips/<%= trip._id %>/edit" class="tripBtn">EDIT</a>
+
+<% if (user && user._id.equals(trip.user)) { %>
+<form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+  <button type="submit">DELETE TRIP</button>
+</form>
+<% } %>
+
 <section id="trips-show-page">
   <div>Trip Name: </div>
   <div><%= trip.title %></div>
@@ -17,29 +25,22 @@
   <div><%= trip.privacy ? 'Private' : 'Public' %></div>
   <!-- start destinations list -->
   <div>Destinations:</div>
+  <a href="/trips/<%= trip._id %>/destinations/new" class="tripBtn">Add a Destination</a>
   <ul>
-    <%- trip.stops.map(d => 
-      `<li>${d.imgUrl}</li>`
-      `<li>${d.name}</li>`
-      `<li>${d.location}</li>`
-      `<li>${d.openingHrs}</li>`
-      `<li>${d.phoneNum}</li>`
-      `<li>${d.website}</li>`
-      `<li>${d.budget}</li>`
-      `<li>${d.expenses}</li>`
-    ).join('') %>
+    <% trip.stops.forEach(function(d) {  %>
+    <div>
+      <img src=" <%= d.imgUrl %>" ></img>
+      <li><%= d.name %></li>
+      <li><%= d.location %></li>
+      <li><%= d.openingHrs %></li>
+      <li><%= d.phoneNum %></li>
+      <li><%= d.website %></li>
+      <li><%= d.budget %></li>
+      <li><%= d.expenses %></li>
+    </div>
+    <% }) %>
   </ul>
   <!-- end destinations list -->
 </section>
-
-<!-- add to trip form below this comment -->
-<form id="add-per-to-trip" action="/trips/<%= trip._id %>/destinations" method="POST">
-  <select name="destinationId">
-    <%- destinations.map(d => 
-      `<option value="${d._id}">${d.name}</option>`
-    ).join('') %>
-  </select>
-  <button type="submit">Add to Trip</button>
-</form>
 
 <%- include('../partials/footer') %>

@@ -4,34 +4,39 @@ const Schema = mongoose.Schema;
 const destSchema = new Schema({
   imgUrl: {
     type: String,
-    required: true
+    // required: true
   },
   name: {
     type: String,
-    required: true
+    // required: true
   },
   location: {
     type: String,
-    required: true
+    // required: true
   },
   openingHrs: {
     type: String,
-    required: true
+    // required: true
   },
   phoneNum: {
-    type: String,
-    required: true
+    type: Number,
+    // required: true
   },
   website: {
     type: String
   },
   budget:  {
     type: Number,
-    required: true
+    // required: true
   },
   expenses: {
     type: Number,
-    required: true
+    // required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId, 
+    ref: 'User', 
+    // required: true
   }
 }, {
   timestamps: true
