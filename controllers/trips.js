@@ -17,11 +17,17 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  // Trip.findById(req.params.id)
-  //   .populate()
-  //   .exec(function(err, trip) {
-
-  //   });
+  Trip.findById(req.params.id)
+    .populate('stops')
+    .exec(function(err, trip) {
+      Destination.find(
+        {_id: {$nin: trip.cast}},
+        function(err, destinations) {
+          console.log(destinations);
+          res.render('trip/show', { title: 'Trip Details', trip, destinations });
+        }
+      );
+    });
 }
 
 function create(req, res) {

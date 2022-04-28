@@ -1,5 +1,28 @@
 <%- include('../partials/header') %>
 
-
+<table id="dest-list">
+  <thead>
+    <tr>
+      <th>Destination Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% trips.forEach(function(t) { %>
+      <tr>
+        <td><%= t.imgUrl %></td>
+        <td><%= t.name %></td>
+        <td><%= t.location %></td>
+        <td><%= t.openingHrs %></td>
+        <td><%= t.phoneNum %></td>
+        <td><%= t.website %></td>
+        <td><%= t.budget %></td>
+        <td><%= t.expenses %></td>
+        <td><a href="/destinations/<%= d._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>

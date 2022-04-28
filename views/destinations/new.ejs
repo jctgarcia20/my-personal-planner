@@ -1,5 +1,23 @@
 <%- include('../partials/header') %>
 
+<h1>Create New Destination</h1>
 
+<form action="/destinations" method="POST">
+  <label>Photos:</label>
+    <input type="text" name="imgUrl">
+  <label>Name:</label>
+    <input type="text" name="name">
+  <label>Location:</label>
+    <input type="text" name="location">
+  <label>Opening Hours:</label>
+    <input type="text" name="openingHrs">
+  <label>Phone Number:</label>
+    <input type="number" name="phoneNum">
+  <label>Website:</label>
+    <input type="number" name="website">
+  <label>Expenses:</label>
+    <input type="number" name="expenses">
+  <input type="submit" value="Add Destination">
+</form>
 
 <%- include('../partials/footer') %>

@@ -1,5 +1,39 @@
 <%- include('../partials/header') %>
 
-
+<section id="dest-show-page">
+  <div>Photos: </div>
+  <div><%= destination.imgUrl %></div>
+  <div>Name: </div>
+  <div><%= destination.name %></div>
+  <div>Location: </div>
+  <div><%= destination.location %></div>
+  <div>Opening Hours: </div>
+  <div><%= destination.openingHrs %></div>
+  <div>Phone Number: </div>
+  <div><%= destination.phoneNum %></div>
+  <div>Website: </div>
+  <div><%= destination.website %></div>
+  <div>Budget: </div>
+  <div><%= destination.budget %></div>
+  <div>Expenses: </div>
+  <div><%= destination.expenses %></div>
+  <!-- start destinations list -->
+  <div>Trips:</div>
+  <ul>
+    <%- trip.stops.map(t => 
+      `<li>${t.title}</li>`
+      `<li>${t.location}</li>`
+      `<li>${t.startDate}</li>`
+      `<li>${t.endDate}</li>`
+      `<li>${t.budget}</li>`
+      `<li>${t.expenses}</li>`
+      `<li>${t.privacy}</li>`
+      `<li>${t.expenses}</li>`
+      `<li>${t.stops}</li>`
+      `<li>${t.user}</li>`
+    ).join('') %>
+  </ul>
+  <!-- end destinations list -->
+</section>
 
 <%- include('../partials/footer') %>
