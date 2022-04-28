@@ -1,5 +1,45 @@
 <%- include('../partials/header') %>
 
+<section id="show-page">
+  <div>Trip Name: </div>
+  <div><%= trip.title %></div>
+  <div>Location: </div>
+  <div><%= trip.location %></div>
+  <div>Start Date: </div>
+  <div><%= trip.startDate %></div>
+  <div>End Date: </div>
+  <div><%= trip.endDate %></div>
+  <div>Budget: </div>
+  <div><%= trip.budget %></div>
+  <div>Expenses: </div>
+  <div><%= trip.expenses %></div>
+  <div>Public: </div>
+  <div><%= trip.privacy ? 'Private' : 'Public' %></div>
+  <!-- start destinations list -->
+  <div>Destinations:</div>
+  <ul>
+    <%- trip.stops.map(d => 
+      `<li>${d.imgUrl}</li>`
+      `<li>${d.name}</li>`
+      `<li>${d.location}</li>`
+      `<li>${d.openingHrs}</li>`
+      `<li>${d.phoneNum}</li>`
+      `<li>${d.website}</li>`
+      `<li>${d.budget}</li>`
+      `<li>${d.expenses}</li>`
+    ).join('') %>
+  </ul>
+  <!-- end destinations list -->
+</section>
 
+<!-- add to trip form below this comment -->
+<form id="add-per-to-trip" action="/trips/<%= trip._id %>/destinations" method="POST">
+  <select name="destinationId">
+    <%- destinations.map(d => 
+      `<option value="${d._id}">${d.name}</option>`
+    ).join('') %>
+  </select>
+  <button type="submit">Add to Trip</button>
+</form>
 
 <%- include('../partials/footer') %>

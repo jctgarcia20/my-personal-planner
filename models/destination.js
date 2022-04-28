@@ -2,6 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const destSchema = new Schema({
+  imgUrl: {
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true
@@ -10,6 +14,17 @@ const destSchema = new Schema({
     type: String,
     required: true
   },
+  openingHrs: {
+    type: String,
+    required: true
+  },
+  phoneNum: {
+    type: String,
+    required: true
+  },
+  website: {
+    type: String
+  },
   budget:  {
     type: Number,
     required: true
@@ -17,21 +32,6 @@ const destSchema = new Schema({
   expenses: {
     type: Number,
     required: true
-  },
-  phoneNum: {
-    type: String,
-    required: true
-  },
-  openingHrs: {
-    type: String,
-    required: true
-  },
-  photos: {
-    type: String,
-    required: true
-  },
-  website: {
-    type: String
   }
 }, {
   timestamps: true

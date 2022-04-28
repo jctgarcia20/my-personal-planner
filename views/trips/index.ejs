@@ -1,5 +1,27 @@
 <%- include('../partials/header') %>
 
-
+<table id="list">
+  <thead>
+    <tr>
+      <th>Trip Name</th>
+      <th>Location</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% trips.forEach(function(t) { %>
+      <tr>
+        <td><%= t.title %></td>
+        <td><%= t.location %></td>
+        <td><%= t.startDate %></td>
+        <td><%= t.endDate %></td>
+        <td><%= t.budget %></td>
+        <td><%= t.expenses %></td>
+        <td><%= t.privacy %></td>
+        <td><a href="/trips/<%= t._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
 <%- include('../partials/footer') %>

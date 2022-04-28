@@ -10,20 +10,23 @@ const tripSchema = new Schema({
   location: {
     type: String
   },
-  stops: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
+  startDate: {
+    type: String
+  },
+  endDate: {
+    type: String
+  },
   budget:  {
     type: Number
   },
   expenses: {
     type: Number
   },
-  public: {
+  privacy: {
     type: Boolean,
     default: false
   },
-  date: {
-    type: String
-  },
+  stops: [{type: Schema.Types.ObjectId, ref: 'Destination'}],
   user: {
     type: Schema.Types.ObjectId, 
     ref: 'User', 

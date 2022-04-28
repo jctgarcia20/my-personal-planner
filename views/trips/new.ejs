@@ -1,22 +1,26 @@
 <%- include('../partials/header') %>
 
+<h1>Create New Trip</h1>
+
 <form action="/trips" method="POST">
-  <label>Title:</label>
-  <input type="text" name="title">
-  <label>Release Year:</label>
-  <input type="text" name="releaseYear">
-  <label>MPAA Rating</label>
-  <select name="mpaaRating">
-    <option value="G">G</option>
-    <option value="PG">PG</option>
-    <option value="PG-13">PG-13</option>
-    <option value="R">R</option>
-  </select>
-  <label>Cast (separate actors with commas):</label>
-  <input type="text" name="cast">
-  <label>Now Showing:</label>
-  <input type="checkbox" name="nowShowing" checked>
-  <input type="submit" value="Add Movie">
+  <label>Trip Name:</label>
+    <input type="text" name="title">
+  <label>Location:</label>
+    <input type="text" name="location">
+  <label>Start Date:</label>
+    <input type="text" name="startDate">
+  <label>End Date:</label>
+    <input type="text" name="endDate">
+  <label>Budget:</label>
+    <input type="number" name="budget">
+  <label>Expenses:</label>
+    <input type="number" name="expenses">
+  <label>Public Status:</label>
+    <select name="privacy">
+      <option value="false">Private</option>
+      <option value="true">Public</option>
+    </select>
+  <input type="submit" value="Add Trip">
 </form>
 
 <%- include('../partials/footer') %>
