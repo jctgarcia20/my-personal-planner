@@ -19,7 +19,6 @@ function index(req, res) {
 
 function show(req, res) {
   Trip.findById(req.params.id,
-    // .populate('stops')
     function(err, trip) {
           res.render('trips/show', { title: 'Trip Details', trip });
     });
@@ -31,7 +30,6 @@ function create(req, res) {
   trip.user = req.user._id;
   trip.save(function(err) {
     if (err) return res.render('trips/new');
-    // Probably want to go to newly added book's show view
     res.redirect(`/trips`);
   });
 }
@@ -43,9 +41,7 @@ function newTrip(req, res) {
 function deleteTrip(req, res) {
   console.log('hello');
   Trip.findOneAndDelete(
-    // Ensue that the book was created by the logged in user
     {_id: req.params.id, user: req.user._id}, function(err) {
-      // Deleted book, so must redirect to index
       res.redirect('/trips');
     }
   );

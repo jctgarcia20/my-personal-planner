@@ -43,7 +43,6 @@ nav > img {
 
 .login {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   height: 34px;
 }
@@ -53,7 +52,6 @@ nav > img {
 }
 
 #container {
-  /* margin-top: 1rem; */
   position: relative;
 }
 
@@ -62,7 +60,6 @@ nav > img {
   top: 68%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: rgb(41, 73, 206); */
   background-color: transparent;
   border-color: white;
   color: white;
@@ -210,12 +207,7 @@ figcaption {
 }
 
 #planner-list {
-  /* display: flex; */
-  /* text-align: center; */
-  /* max-width: fit-content; */
-  /* margin: 1rem; */
   font-size: 15px;
-  /* margin-bottom: 1rem; */
 }
 
 #planner-row {
@@ -259,8 +251,6 @@ figcaption {
 
 footer {
   position: relative;
-  /* bottom: 0; */
-  /* width: 100%; */
   height: 150px;
   background-color: #3d405b;
   color: white;
