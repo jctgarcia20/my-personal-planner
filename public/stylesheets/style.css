@@ -247,6 +247,7 @@ figcaption {
   width: 50%;
   background-position: center;
   height: auto;
+  border-radius: 7px;
 }
 
 .tripBtn {
