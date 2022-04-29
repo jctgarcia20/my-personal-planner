@@ -53,16 +53,17 @@ const tripSchema = new Schema({
     type: String
   },
   startDate: {
-    type: String
+    type: Date
   },
   endDate: {
-    type: String
+    type: Date
   },
   budget:  {
     type: Number
   },
   expenses: {
-    type: Number
+    type: Number,
+    default: 0
   },
   privacy: {
     type: Boolean,

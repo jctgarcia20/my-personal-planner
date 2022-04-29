@@ -1,42 +1,51 @@
 <%- include('../partials/header') %>
 
-<a href="/trips/<%= trip._id %>/edit" class="tripBtn">EDIT</a>
+<div id="plannerBtns">
+  <% if (user && user._id.equals(trip.user)) { %>
+  <form action="/trips/<%= trip._id %>/edit">
+    <button type="submit">EDIT PLANNER</button>
+  </form>
+  <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
+    <button type="submit">DELETE PLANNER</button>
+  </form>
+  <% } %>
+</div>
 
-<% if (user && user._id.equals(trip.user)) { %>
-<form action="/trips/<%= trip._id %>?_method=DELETE" method="POST">
-  <button type="submit">DELETE TRIP</button>
-</form>
-<% } %>
-
-<section id="trips-show-page">
-  <div>Trip Name: </div>
-  <div><%= trip.title %></div>
-  <div>Location: </div>
-  <div><%= trip.location %></div>
-  <div>Start Date: </div>
-  <div><%= trip.startDate %></div>
-  <div>End Date: </div>
-  <div><%= trip.endDate %></div>
-  <div>Budget: </div>
-  <div><%= trip.budget %></div>
-  <div>Expenses: </div>
-  <div><%= trip.expenses %></div>
-  <div>Public: </div>
-  <div><%= trip.privacy ? 'Private' : 'Public' %></div>
+<section id="planner-show-page">
+  <div id="showPlan">
+    <div>Planner Name: </div>
+    <div><%= trip.title %></div>
+    <div>Location: </div>
+    <div><%= trip.location %></div>
+    <div>Start Date: </div>
+    <div><%= trip.startDate %></div>
+    <div>End Date: </div>
+    <div><%= trip.endDate %></div>
+    <div>Budget: </div>
+    <div><%= trip.budget %></div>
+    <div>Expenses: </div>
+    <div><%= trip.expenses %></div>
+    <div>Privacy Status: </div>
+    <div><%= trip.privacy ? 'Private' : 'Public' %></div>
+    <hr>
+  </div>
   <!-- start destinations list -->
-  <div>Destinations:</div>
-  <a href="/trips/<%= trip._id %>/destinations/new" class="tripBtn">Add a Destination</a>
+  <div id="dest">Destinations:</div>
+  <a href="/trips/<%= trip._id %>/destinations/new" class="tripBtn">Add Activity</a>
   <ul>
     <% trip.stops.forEach(function(d) {  %>
     <div>
-      <img src=" <%= d.imgUrl %>" ></img>
-      <li><%= d.name %></li>
-      <li><%= d.location %></li>
-      <li><%= d.openingHrs %></li>
-      <li><%= d.phoneNum %></li>
-      <li><%= d.website %></li>
-      <li><%= d.budget %></li>
-      <li><%= d.expenses %></li>
+      <img src=" <%= d.imgUrl %>" id="showImg"></img>
+      <p>Name: <%= d.name %></p>
+      <p>Location: <%= d.location %></p>
+      <p>Opening Hours: <%= d.openingHrs %></p>
+      <p>Phone Number: <%= d.phoneNum %></p>
+      <p>Website: <%= d.website %></p>
+      <p>Budget: <%= d.budget %></p>
+      <p>Expenses: <%= d.expenses %></p>
+      <br>
+      <hr>
+      <br>
     </div>
     <% }) %>
   </ul>

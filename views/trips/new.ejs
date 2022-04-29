@@ -1,26 +1,29 @@
 <%- include('../partials/header') %>
 
-<h1>Create New Trip</h1>
+<img src="https://i.imgur.com/krfDDpc.jpg" alt="planner" id="plannerPic">
 
-<form action="/trips" method="POST">
-  <label>Trip Name:</label>
+<h1 id="planTitle">Create New Plan</h1>
+<hr>
+<br>
+<form action="/trips" method="POST" id="createPlanForm">
+  <label>Planner Name:</label>
     <input type="text" name="title">
   <label>Location:</label>
     <input type="text" name="location">
   <label>Start Date:</label>
-    <input type="text" name="startDate">
+    <input type="date" name="startDate">
   <label>End Date:</label>
-    <input type="text" name="endDate">
-  <label>Budget:</label>
+    <input type="date" name="endDate">
+  <label>Total Budget:</label>
     <input type="number" name="budget">
-  <label>Expenses:</label>
-    <input type="number" name="expenses">
+  <label>Total Expenses:</label>
+    <input type="number" name="expenses" value="0">
   <label>Public Status:</label>
     <select name="privacy">
       <option value="false">Private</option>
       <option value="true">Public</option>
     </select>
-  <input type="submit" value="Add Trip">
+  <input type="submit" value="Add Planner" class="btn">
 </form>
 
 <%- include('../partials/footer') %>

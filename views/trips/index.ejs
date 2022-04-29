@@ -1,15 +1,19 @@
 <%- include('../partials/header') %>
 
-<table id="trip-list">
-  <thead>
+<img src="https://i.imgur.com/b7cFAvq.jpg" alt="all plans" id="allPlans">
+
+<h1 id="planTitle">All My Plans</h1>
+<hr>
+<table id="planner-list">
+  <thead id="planner-row">
     <tr>
-      <th>Trip Name</th>
-      <th>Location</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Budget</th>
-      <th>Expenses</th>
-      <th>Privacy</th>
+      <th>Planner Name: </th>
+      <th>Location: </th>
+      <th>Start Date: </th>
+      <th>End Date: </th>
+      <th>Budget: </th>
+      <th>Expenses: </th>
+      <th>Public: </th>
     </tr>
   </thead>
   <tbody>
@@ -22,7 +26,7 @@
         <td><%= t.budget %></td>
         <td><%= t.expenses %></td>
         <td><%= t.privacy %></td>
-        <td><a href="/trips/<%= t._id %>">DETAILS</a></td>
+        <td><a href="/trips/<%= t._id %>" id="details">DETAILS</a></td>
       </tr>
       <% }); %>
     </tbody>

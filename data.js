@@ -2,9 +2,9 @@ exports.trips = [
   {
     title: 'Cabo Getaway',
     location: 'Cabo San Lucas, Mexico',
-    budget: 5000,
+    budget: 10000,
     expenses: 1500,
-    public: false,
+    public: true,
     date: 'May 1, 2022 - May 7, 2022'
   }
 ];
