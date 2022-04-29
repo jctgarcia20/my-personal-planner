@@ -21,7 +21,7 @@ function show(req, res) {
   Trip.findById(req.params.id,
     // .populate('stops')
     function(err, trip) {
-          res.render('trips/show', { title: 'Trip Details', trip, destinations });
+          res.render('trips/show', { title: 'Trip Details', trip });
     });
 }
 

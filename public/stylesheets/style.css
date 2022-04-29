@@ -10,14 +10,16 @@ body {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 a:hover {
   color: rgb(180, 220, 255);
+  transform: scale(1.1);
 }
 
 nav {
- background-color: #79A9D1;
+ background-color: #3d405b;
  display: flex;
  flex-direction: row;
  justify-content: flex-start;
@@ -30,8 +32,10 @@ nav > a, h1 {
   margin: 15px;
 }
 
-nav > h1 {
-  font-size: 35px;
+nav > img {
+  width: 5%;
+  height: auto;
+  margin-left: 1rem;
   font-family: 'Cormorant Garamond', serif;
   color: white;
   margin-right: auto;
@@ -70,6 +74,7 @@ nav > h1 {
   -webkit-tap-highlight-color: transparent;
   text-shadow: none;
   font-family: 'Cormorant Garamond', serif;
+  border-radius: 5px;
 }
 
 #title {
@@ -77,7 +82,7 @@ nav > h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 80px;
+  font-size: 60px;
   color: white;
   font-weight: bold;
   font-family: 'Cormorant Garamond', serif;
@@ -111,6 +116,10 @@ h2 {
   font-size: 1.7rem;
 }
 
+#coverBtn {
+  font-family: 'Cormorant Garamond', serif;
+}
+
 #models, #models2 {
   display: flex;
   justify-content: center;
@@ -142,18 +151,35 @@ figcaption {
   justify-content: space-between;
 }
 
+#bigPic {
+  max-width: 90%;
+}
+
+#bigPic2 {
+  max-width: 124%;
+  margin-left: -6rem;
+}
+
+#wedding {
+  margin-left: -6rem;
+}
+
+.column:hover, .column2:hover {
+  transform: scale(1.015);
+}
+
 footer {
   position: relative;
   /* bottom: 0; */
   /* width: 100%; */
   height: 150px;
-  background-color: #7D8CA3;
+  background-color: #3d405b;
   color: white;
   text-align: center;
 }
 
 footer > h3 {
-  font-size: 35px;
+  font-size: 38px;
   font-family: 'Cormorant Garamond', serif;
   color: white;
   text-align: center;

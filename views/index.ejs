@@ -2,36 +2,38 @@
 
 <div id="container">
   <video autoplay loop muted poster="https://i.imgur.com/o04tCfR.jpg">
-    <source src="https://i.imgur.com/XI9jRw1.mp4" type="video/mp4">
+    <source src="https://i.imgur.com/8Jja2M5.mp4" type="video/mp4">
   </video>
   <!-- <img id="cover" src="https://i.imgur.com/o04tCfR.jpg" alt="White Sandy Beach"> -->
   <div id="title"><%= title %></div>
-  <p id="slogan">Save money. Live better.</p>
-  <button>PLAN YOUR TRIP NOW</button>
+  <p id="slogan">Create. Budget. Celebrate.</p>
+  <button>
+    <a href="/trips/new" id="coverBtn">START NOW</a>
+  </button>
 </div>
-<h2>Your next destination awaits</h2>
+<h2>Start saving for your next chapter</h2>
 <div id="models">
   <figure>
-    <img class="column" src="https://i.imgur.com/7U3eNYB.jpg" alt="camels">
-    <figcaption>Morocco</figcaption>
+    <img class="column" src="https://i.imgur.com/YqKQVNW.jpg" alt="retirement">
+    <figcaption>Retirement</figcaption>
   </figure>
   <figure>
-    <img class="column" src="https://i.imgur.com/VRquuTn.jpg" alt="hot air balloons">
-    <figcaption>New Mexico</figcaption>
+    <img class="column" src="https://i.imgur.com/yrNIrMy.jpg" alt="new homeowner">
+    <figcaption>Dream Home</figcaption>
   </figure>
   <figure>
-    <img class="column" src="https://i.imgur.com/W8ZDiz0.jpg" alt="parents and baby">
-    <figcaption>Belize</figcaption>
+    <img class="column" src="https://i.imgur.com/AsjU606.jpg" alt="education">
+    <figcaption>Education</figcaption>
   </figure>
 </div>
 <div id="models2">
   <figure>
-    <img class="column2" src="https://i.imgur.com/ULFJk0j.jpg" alt="santorini">
-    <figcaption>Greece</figcaption>
+    <img class="column2" id="bigPic" src="https://i.imgur.com/483grWX.jpg" alt="family vacation">
+    <figcaption>Family Vacation</figcaption>
   </figure>
   <figure>
-    <img class="column2" src="https://i.imgur.com/nwD7We8.jpg" alt="market">
-    <figcaption>Thailand</figcaption>
+    <img class="column2" id="bigPic2" src="https://i.imgur.com/6YDBJNy.jpg" alt="wedding">
+    <figcaption id="wedding">Wedding</figcaption>
   </figure>
 
 <%- include('./partials/footer') %>
