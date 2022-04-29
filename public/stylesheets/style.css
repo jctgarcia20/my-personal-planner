@@ -249,6 +249,10 @@ figcaption {
   height: auto;
 }
 
+.tripBtn {
+  color:rgb(39, 88, 246);
+}
+
 footer {
   position: relative;
   height: 150px;
