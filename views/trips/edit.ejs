@@ -1,8 +1,11 @@
 <%- include('../partials/header') %>
 
-<h1>Edit My Planner</h1>
+<img src="https://i.imgur.com/C74C5ZO.jpg" id="allPlans">
 
-<form action="/trips/<%= trip._id %>?_method=PUT" method="POST">
+<h1>Edit My Planner</h1>
+<hr>
+
+<form action="/trips/<%= trip._id %>?_method=PUT" method="POST" id="createPlanForm">
   <label>Planner Name:</label>
     <input type="text" name="title" value="<%= trip.title %>">
   <label>Location:</label>
@@ -20,7 +23,7 @@
       <option value="false">Private</option>
       <option value="true">Public</option>
     </select>
-  <input type="submit" value="Update Planner">
+  <input type="submit" value="Update Planner" class="btn">
 </form>
 
 <%- include('../partials/footer') %>
