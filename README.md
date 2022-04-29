@@ -38,5 +38,6 @@
 
 <h2>Next Steps:</h2>
 <p>- Implement edit, and delete functionality to planned activities.
+<br>- Update planner privacy settings
 <br>- Add an explore feed to allow users to share their planners with other users to see
 <br>- Implement an API to let users have a wider variety of information and an easier time adding events/activites to their planner.</p>
