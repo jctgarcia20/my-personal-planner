@@ -16,7 +16,7 @@
 <p>Be able to plan, organize, and budget all your life events. With 'My Personal Planner', start budgeting your expenses and save for your next chapter!
 
 <br>
-<h2>👨🏻‍💻 The Website: </h2>
+<h2>👨🏻‍💻 The Website </h2>
 <details open>
 <img src="https://i.imgur.com/d2bjvYP.png">
 <img src="https://i.imgur.com/0J3I7Yh.png">
